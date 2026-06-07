@@ -26,7 +26,7 @@ opacity:0,scale:0.95,scrollTrigger:{
 <template>
 <div class="hero w-full bg-black text-white relative overflow-hidden h-screen flex flex-col justify-center items-center">
     <div class="text-center space-y-6">
-<div class="overflow-hidden">
+<div class="overflow-hidden py-3">
     <h2 class="hero-title font-bold text-6xl">
                   Build Stunning Experiences
 
@@ -49,6 +49,5 @@ opacity:0,scale:0.95,scrollTrigger:{
 </div>
     </div>
 </div>
-<div class="bg-red-600 h-screen"> </div>
 </template>
 <style scoped></style>

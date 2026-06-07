@@ -10,8 +10,8 @@ import TestimonialsSection from './components/TestimonialsSection.vue';
 <template>
  <HeroSection/>
  <ServiceSection/>
- <ProcessSection/>
  <ShowcaseSection/>
+ <ProcessSection/>
  <TestimonialsSection/>
  <CtaSection/>
 </template>
