@@ -3,50 +3,17 @@ import { onMounted } from 'vue'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-gsap.registerPlugin(ScrollTrigger)
-onMounted(()=>{
-  const img = document.querySelector('.step-img')
-  const tl = gsap.timeline({scrollTrigger:{
-  pin:true,start:'top top',end:'+=300%',trigger:'.story',
 
-}})
-
-gsap.set('.img-2,.img-3,.img-4',{
-  y:100,opacity:0
-})
-tl.to('.img-div',{
-
-  scrollTrigger:{
-  start:'top top',end:'+=300%',markers:true,trigger:'.img-div'
-  }
-})
-tl.to('.img-2',{
-  y:0,opacity:1,duration:1,scrollTrigger:{
-    scrub:true,start:'top top',end:'bottom top',trigger:'.img-2'
-  }
-})
-.to('.img-3',{
-  y:0,opacity:1,duration:1,scrollTrigger:{
-    scrub:true,start:'top top',end:'bottom top',trigger:'.img-3'
-  }
-})
-.to('.img-4',{
-  y:0,opacity:1,duration:1,scrollTrigger:{
-    scrub:true,start:'top top',end:'bottom top',trigger:'.img-4'
-  }
-})
-})
 </script>
 <template>
+  <!-- Story Section -->
   <section
-    class="story relative h-screen overflow-hidden bg-[#0f0f0f] text-white flex items-center px-20"
+    class="story relative h-screen bg-[#0d0d0d] text-white flex items-center overflow-hidden px-16"
   >
     <!-- Left Content -->
     <div class="w-1/2 z-10">
-      <p
-        class="uppercase tracking-[0.3em] text-sm text-gray-400 mb-4"
-      >
-        Creative Process
+      <p class="uppercase tracking-[0.35em] text-sm text-gray-400 mb-4">
+        Our Process
       </p>
 
       <div class="overflow-hidden">
@@ -56,41 +23,59 @@ tl.to('.img-2',{
       </div>
 
       <div class="overflow-hidden mt-6">
-        <p class="step-desc text-lg text-gray-400 max-w-lg leading-relaxed">
-          We begin by understanding your goals, audience, and vision to
-          create experiences that truly connect with people.
+        <p class="step-desc max-w-lg text-lg text-gray-400 leading-relaxed">
+          We dive deep into your brand, audience, and goals to understand
+          exactly what needs to be built.
         </p>
       </div>
 
-      <div class="mt-10">
-        <span
-          class="border border-white/20 px-4 py-2 rounded-full text-sm"
-        >
-          Step 01 / 04
-        </span>
+      <button
+        class="mt-10 px-6 py-3 border border-white/20 rounded-full hover:bg-white hover:text-black transition-all duration-300"
+      >
+        Learn More
+      </button>
+    </div>
+
+    <!-- Right Images -->
+    <div class="w-1/2 flex justify-center items-center">
+      <div class="relative w-[650px] h-[450px]">
+
+        <img
+          class="img-1 absolute inset-0 w-full h-full object-cover rounded-3xl"
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200"
+        />
+
+        <img
+          class="img-2 absolute inset-0 w-full h-full object-cover rounded-3xl"
+          src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200"
+        />
+
+        <img
+          class="img-3 absolute inset-0 w-full h-full object-cover rounded-3xl"
+          src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200"
+        />
+
+        <img
+          class="img-4 absolute inset-0 w-full h-full object-cover rounded-3xl"
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200"
+        />
+
       </div>
     </div>
 
-    <!-- Right Image -->
-    <div class="w-1/2 flex justify-center items-center">
-    <div class="img-div relative w-[650px] h-[450px]">
-
-  <img src="https://i.pinimg.com/736x/c4/2d/75/c42d75034b46507b6cb3390a09bf997f.jpg" class="img-1 absolute inset-0 w-full h-full object-cover rounded-3xl" />
-
-  <img src="https://i.pinimg.com/736x/1b/ab/9a/1bab9a520ddc07ab8b1a9b60e1afcfee.jpg" class="img-2 absolute inset-0 w-full h-full object-cover rounded-3xl" />
-
-  <img src="https://i.pinimg.com/736x/5f/bf/31/5fbf311ba6d308b5dee2180fc3e414a6.jpg" class="img-3 absolute inset-0 w-full h-full object-cover rounded-3xl" />
-
-  <img src="https://i.pinimg.com/736x/29/fc/bb/29fcbbdbc6b81449756e7647711e7c9b.jpg" class="img-4 absolute inset-0 w-full h-full object-cover rounded-3xl" />
-
-</div>
-    </div>
-
-    <!-- Background Accent -->
+    <!-- Background Blur -->
     <div
-      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-      w-[700px] h-[700px] rounded-full bg-white/5 blur-3xl"
+      class="absolute w-[700px] h-[700px] rounded-full bg-white/5 blur-3xl top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
     ></div>
+  </section>
+
+  <!-- Dummy Next Section -->
+  <section
+    class="h-screen bg-white flex items-center justify-center"
+  >
+    <h2 class="text-6xl font-bold text-black">
+      Next Section
+    </h2>
   </section>
 </template>
 <style scoped></style>
