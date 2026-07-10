@@ -1,9 +1,15 @@
 <script setup>
 import { onMounted } from 'vue'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import ScrollTrigger  from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+onMounted(()=>{
+    console.log("Mounted");
 
-
+  ScrollTrigger.create({
+    trigger:'.story',start:'top top',end:'+=300%',pin:true,scrub:'true',markers:'true'
+  })
+ScrollTrigger.refresh()})
 </script>
 <template>
   <!-- Story Section -->
