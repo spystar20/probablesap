@@ -5,11 +5,23 @@ import ScrollTrigger  from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 onMounted(()=>{
     console.log("Mounted");
-
-  ScrollTrigger.create({
-    trigger:'.story',start:'top top',end:'+=300%',pin:true,scrub:'true',markers:'true'
-  })
-ScrollTrigger.refresh()})
+gsap.set('.img-2,.img-3,.img-4',{
+  y:80,opacity:0
+}
+)
+const tl = gsap.timeline({scrollTrigger:{
+ trigger:'.story',start:'top top',end:'+=300%',pin:true,scrub:true,markers:true
+}})
+tl.to('.img-2',{
+  y:0,opacity:1
+})
+.to('.img-3',{
+  y:0,opacity:1
+})
+.to('.img-4',{
+  y:0,opacity:1
+})
+})
 </script>
 <template>
   <!-- Story Section -->
