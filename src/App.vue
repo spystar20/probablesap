@@ -4,8 +4,8 @@ import HeroSection from './components/HeroSection.vue';
 import ProcessSection from './components/ProcessSection.vue';
 import ServiceSection from './components/ServiceSection.vue';
 import ShowcaseSection from './components/ShowcaseSection.vue';
-import Test from './components/Test.vue';
 import TestimonialsSection from './components/TestimonialsSection.vue';
+import MaskReveal from './components/MaskReveal.vue';
 
 </script>
 <template>
@@ -15,5 +15,5 @@ import TestimonialsSection from './components/TestimonialsSection.vue';
  <!-- <ProcessSection/> -->
  <TestimonialsSection/>
  <CtaSection/>
- <!-- <Test/> -->
+<MaskReveal/>
 </template>

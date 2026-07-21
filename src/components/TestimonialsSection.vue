@@ -15,12 +15,67 @@ const tl = gsap.timeline({scrollTrigger:{
 tl.to('.img-2',{
   y:0,opacity:1
 })
+.to('.step-title',{
+  y:-50,duration:0.5,opacity:0
+},'<')
+.to('.step-desc',{
+  y:-50,opacity:0,duration:0.5
+},'<')
+.to('.step-title',{
+  textContent:'design',duration:0 ,y:50
+})
+.to('.step-desc',{
+  y:50,duration:0,textContent:'We turn ideas into thoughtful designs that are beautiful, intuitive, and built around your users.'
+})
+.to('.step-title',{
+  opacity:1,y:0,duration:0.4
+},'<')
+.to('.step-desc',{
+  y:0,opacity:1,duration:0.4
+},'<')
 .to('.img-3',{
   y:0,opacity:1
 })
+.to('.step-title',{
+  y:-50,duration:0.5,opacity:0
+},'<')
+.to('.step-desc',{
+  y:-50,opacity:0,duration:0.5
+},'<')
+.to('.step-title',{
+  textContent:'Develop',duration:0 ,y:50
+})
+.to('.step-desc',{
+  y:50,duration:0,textContent:'We bring the design to life with clean, scalable code and smooth interactions that feel effortless.'
+})
+.to('.step-title',{
+  opacity:1,y:0,duration:0.4
+},'<')
+.to('.step-desc',{
+  y:0,opacity:1,duration:0.4
+},'<')
 .to('.img-4',{
   y:0,opacity:1
 })
+.to('.step-title',{
+  y:-50,duration:0.5,opacity:0
+},'<')
+.to('.step-desc',{
+  y:-50,opacity:0,duration:0.5
+},'<')
+.to('.step-title',{
+  textContent:'Launch',duration:0 ,y:50
+})
+.to('.step-desc',{
+  y:50,duration:0,textContent:"We polish every detail, test the experience, and launch your product ready to make an impact."
+
+})
+.to('.step-title',{
+  opacity:1,y:0,duration:0.4
+},'<')
+.to('.step-desc',{
+  y:0,opacity:1,duration:0.4
+},'<')
 })
 </script>
 <template>
@@ -34,7 +89,7 @@ tl.to('.img-2',{
         Our Process
       </p>
 
-      <div class="overflow-hidden">
+      <div class="overflow-none">
         <h2 class="step-title text-7xl font-bold leading-none">
           Discover
         </h2>
