@@ -1,5 +1,20 @@
 <script setup>
-
+import { onMounted } from 'vue'
+import gsap from 'gsap'
+import ScrollTrigger  from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+onMounted(()=>{
+const tl = gsap.timeline()
+tl.from('.mask-title',{
+  yPercent:100,duration:1,ease:'power3.out'
+})
+.from('.mask-img',{
+  clipPath:'inset(0% 100% 0% 0%)',
+  scale:1.2,
+  duration:1.5,
+  ease:'power3.out'
+},'-=0.5')
+})
 </script>
 
 <template>
