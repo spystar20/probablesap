@@ -1,15 +1,24 @@
 <script setup>
 import { onMounted } from 'vue'
 import gsap from 'gsap'
-
+import ScrollTrigger  from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 onMounted(() => {
-
+gsap.from('.strip',{
+    rotateY:(index) => index % 2 === 0 ? 90 : -90,stagger:0.15,duration:1,ease:'power3.out', scrollTrigger: {
+      trigger: '.strip-container',
+      start: 'top 80%',
+      end: 'top 20%',
+      scrub: true,
+      markers: true
+    }
+})
 })
 </script>
 
 <template>
 
-  <section class="h-screen bg-[#0d0d0d] flex items-center justify-center">
+  <section class="h-screen strip-container bg-[#0d0d0d] flex items-center justify-center">
 
     <div class="strip-container w-[700px] h-[500px] flex overflow-hidden">
 <div class="strip strip-1"></div>
@@ -25,7 +34,9 @@ onMounted(() => {
 </template>
 
 <style scoped>
-
+.strip-container{
+    perspective: 1000px;
+}
 .strip {
   width: 20%;
   height: 100%;
