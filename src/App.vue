@@ -7,9 +7,11 @@ import ShowcaseSection from './components/ShowcaseSection.vue';
 import TestimonialsSection from './components/TestimonialsSection.vue';
 import MaskReveal from './components/MaskReveal.vue';
 import StripReveal from './components/StripReveal.vue';
+import TextReveal from './components/TextReveal.vue';
 
 </script>
 <template>
+    <TextReveal/>
     <StripReveal/>
  <HeroSection/>
  <ServiceSection/>
