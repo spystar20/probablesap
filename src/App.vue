@@ -12,12 +12,12 @@ import TextReveal from './components/TextReveal.vue';
 </script>
 <template>
     <TextReveal/>
-    <StripReveal/>
- <HeroSection/>
+     <StripReveal/>
+ <!-- <HeroSection/>
  <ServiceSection/>
  <ShowcaseSection/>
- <!-- <ProcessSection/> -->
+ <ProcessSection/>
  <TestimonialsSection/>
  <CtaSection/>
-<MaskReveal/>
+<MaskReveal/> -->
 </template>
