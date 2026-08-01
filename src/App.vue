@@ -8,11 +8,13 @@ import TestimonialsSection from './components/TestimonialsSection.vue';
 import MaskReveal from './components/MaskReveal.vue';
 import StripReveal from './components/StripReveal.vue';
 import TextReveal from './components/TextReveal.vue';
+import ImageAnimation from './components/ImageAnimation.vue';
 
 </script>
 <template>
-    <TextReveal/>
-     <StripReveal/>
+    <ImageAnimation/>
+    <!-- <TextReveal/>
+     <StripReveal/> -->
  <!-- <HeroSection/>
  <ServiceSection/>
  <ShowcaseSection/>
