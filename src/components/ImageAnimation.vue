@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 import gsap from 'gsap'
 import ScrollTrigger  from 'gsap/ScrollTrigger'
 import SplitType from 'split-type'
@@ -70,12 +70,70 @@ onMounted(()=>{
 //     }
 //   }
 // )
+
 const images = gsap.utils.toArray('.interior-img')
 const items = gsap.utils.toArray('.project-item')
+const projectList = document.querySelector('.project-list')
+const moveX = gsap.quickTo(images,'x',{
+  duration:0.5,ease:'power3'
+})
+const moveY = gsap.quickTo(images,'y',{
+    duration:0.5,ease:'power3'
+})
+projectList.addEventListener('mousemove',(e)=>{
+  const rect = projectList.getBoundingClientRect()
+  const x = e.clientX - rect.left
+  const y = e.clientY - rect.top
+  const centerX = x -rect.width/2
+  const centerY = y-rect.height/2
+  moveX(centerX*0.15)
+  moveY(centerY*0.15)
+})
 items.forEach(item=>{
   item.addEventListener('mouseenter',()=>{
+    gsap.to(images, {
+  opacity: 1,
+  scale: 1,
+  stagger: 0.1,
+  duration: 0.5,
+  ease: 'back.out(1.7)',
+  overwrite: 'auto'
+})
+  const tl = gsap.timeline()
+//  tl.to('.img-1', {
+//     opacity: 1,
+//     scale: 1,
+//     x: -150,
+//     y: -80,
+//     rotate: -8,
+//     duration: 0.6,
+//     ease: 'back.out(1.7)'
+//   })
+//    .to('.img-2', {
+//     opacity: 1,
+//     scale: 1,
+//     x: 0,
+//     y: 80,
+//     rotate: 4,
+//     duration: 0.6,
+//     ease: 'back.out(1.7)'
+//   }, '<')
+
+//   .to('.img-3', {
+//     opacity: 1,
+//     scale: 1,
+//     x: 150,
+//     y: -60,
+//     rotate: 8,
+//     duration: 0.6,
+//     ease: 'back.out(1.7)'
+//   }, '<')
+  })
+})
+items.forEach(item=>{
+  item.addEventListener('mouseleave',()=>{
     gsap.to(images,{
-      opacity:1,scale:1,stagger:0.1,duration:0.5,ease:'back.out(1.7)'
+      opacity:0,scale:0.5,overwrite:'auto',ease:'elastic.in'
     })
   })
 })
