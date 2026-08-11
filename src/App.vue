@@ -9,10 +9,12 @@ import MaskReveal from './components/MaskReveal.vue';
 import StripReveal from './components/StripReveal.vue';
 import TextReveal from './components/TextReveal.vue';
 import ImageAnimation from './components/ImageAnimation.vue';
+import ProjectHover from './components/ProjectHover.vue';
 
 </script>
 <template>
-    <ImageAnimation/>
+    <ProjectHover/>
+    <!-- <ImageAnimation/> -->
     <!-- <TextReveal/>
      <StripReveal/> -->
  <!-- <HeroSection/>
