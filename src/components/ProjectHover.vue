@@ -1,4 +1,6 @@
 <script setup>
+import { onMounted } from 'vue';
+import gsap from 'gsap';
 const projectImages = {
   building: 'https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800',
 
@@ -7,7 +9,18 @@ const projectImages = {
   fashion: 'https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=800',
 
   interior: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800'
-}</script>
+}
+onMounted(()=>{
+  const projectItems = gsap.utils.toArray('.project-item')
+  const projectImage = document.querySelector('.project-image')
+  projectItems.forEach(Element=>
+    Element.addEventListener('mouseenter',()=>{
+     const project = Element.dataset.project
+      console.log(project)
+    })
+  )
+})
+</script>
 <template>
   <section class="min-h-screen bg-black text-white flex items-center justify-center">
 
